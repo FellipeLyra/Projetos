@@ -43,3 +43,4 @@ public class Pokemon {
         return ataques;
     }
 }
+
