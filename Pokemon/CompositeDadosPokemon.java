@@ -1,7 +1,13 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class DadosPokemon {
+interface PokemonDataProvider {
+    String[] getPokemonsDisponiveis();
+    Pokemon getPokemon(String nomePokemon);
+    Pokemon getPokemonAleatorio();
+}
+
+public class CompositeDadosPokemon implements PokemonDataProvider {
     private Map<String, Pokemon> pokemons;
 
     public String[] getPokemonsDisponiveis() {
@@ -10,7 +16,7 @@ public class DadosPokemon {
     "Ekans", "Rookidee", "Machop", "Caterpie", "Misdreavus", "Aron", "Abra", "Glaceon", };
     }
 
-    public DadosPokemon() {
+    public CompositeDadosPokemon() {
         this.pokemons = new HashMap<>();
         inicializarPokemons();
     }
