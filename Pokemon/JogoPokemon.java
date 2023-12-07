@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class JogoPokemon {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        DadosPokemon baseDeDados = new DadosPokemon();
+        PokemonDataProvider baseDeDados = new CompositeDadosPokemon();
 
         boolean jogarNovamente = true;
 
@@ -58,6 +58,7 @@ public class JogoPokemon {
                         System.out.println("Opção inválida.");
                     }
                 }
+
                 System.out.println("====================================");
 
                 if (usuario.getPontosDeVida() <= 0) {
